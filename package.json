@@ -13,7 +13,9 @@
   "author": "Girl Code",
   "license": "ISC",
   "bugs": {
+    "url": "https://github.com/girlcodeakl/"
   },
+  "homepage": "https://github.com/girlcodeakl/",
   "dependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.3"
