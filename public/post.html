@@ -3,7 +3,6 @@
   <head>
     <meta charset='utf-8'>
     <link rel="stylesheet" href="css/style.css">
-    <script src="jquery.min.js"></script>
   </head>
   <body>
     <div class="nav-bar">
@@ -11,20 +10,11 @@
       <a href="feed.html" class="nav-bar">FEED</a>
       <a href="post.html" class="nav-bar">POST</a>
     </div>
-    <form class="submitForm" method="post" action="/ideas">
-      <input type="text" name="idea" value="idea goes here" class="ideaInput">
-      <input type="submit" value="Submit">
-    </form>
+     <div class="idea-submit">
+        <form method="post" action="/ideas">
+          <input type="text" name="idea" value="idea goes here">
+          <input type="submit" value="Submit">
+      </form>
+    </div>
   </body>
-  <script>
-  var myCoolFunction = function (e) {
-    e.preventDefault();
-    var data = {};
-    data.idea = $(".ideaInput").val();
-    $.post( "/ideas" , data );
-    $(".note").text("Thanks! Your idea was submitted");
-  }
-  $(".submitForm").on("submit", myCoolFunction);
-  </script>
-  <div class="note"></div>
-  </html>
+</html>
