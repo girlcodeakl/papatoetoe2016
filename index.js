@@ -31,10 +31,13 @@ var saveNewIdea = function (request, response) {
   //add this:
   var idea = {};
     idea.text = request.body.idea;
+    idea.url = request.body.url;
     posts.push(idea);
     response.send("thanks for your idea. Press back to add another");
 }
 app.post('/ideas', saveNewIdea);
+
+
 
 //listen for connections on port 3000
 app.listen(process.env.PORT || 3000);
