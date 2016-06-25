@@ -2,6 +2,7 @@
 var express = require('express')
 var app = express();
 var bodyParser = require('body-parser')
+var database = null;
 
 //If a client asks for a file,
 //look in the public folder. If it's there, give it to them.
@@ -31,13 +32,31 @@ var saveNewIdea = function (request, response) {
   //delete this: -> posts.push(req.body.idea); //save it in our list
   //add this:
   var idea = {};
-    idea.text = request.body.idea;
-    idea.author = request.body.author;
-    posts.push(idea);
-    response.send("thanks for your idea. Press back to add another");
+  idea.text = request.body.idea;
+  idea.author = request.body.author;
+  posts.push(idea);
+  response.send("thanks for your idea. Press back to add another");
+
+
 }
 app.post('/ideas', saveNewIdea);
 
 //listen for connections on port 3000
 app.listen(3000);
 console.log("I am listening...");
+
+var mongodb = require('mongodb');
+var uri = 'mongodb://girlcode:hats123@ds015919.mlab.com:23624/never_lose_posts';
+mongodb.MongoClient.connect(uri, function(err, newdb) {
+  if(err) throw err;
+  console.log("yay we connected to the database");
+  database = newdb;
+  var dbPosts = database.collection('posts');
+  dbPosts.find(function (err, cursor) {
+    cursor.each(function (err, item) {
+      if (item != null) {
+        coolIdeas.push(item);
+      }
+    });
+  });
+});
