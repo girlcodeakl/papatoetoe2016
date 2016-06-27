@@ -30,6 +30,54 @@ body {
   background-color: #FFF0A5;
   padding: 20px;
 }
+.idea-submit{
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+
+  input[type=submit] {
+      width: 100%;
+      background-color: white;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      border:2px solid #008CBA;
+  }
+
+  input[type=submit]:hover {
+      background-color:#008CBA;
+      color:white;
+}
+.idea-text{
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+  input[type=text] {
+      width: 100%;
+      background-color: white;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: text;
+      box-sizing: border-box;
+      border:2px solid #008CBA;
+  }
+
 h1 {
   text-align: center;
   color: #FFB03B;
