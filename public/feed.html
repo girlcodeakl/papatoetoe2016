@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <div class="nav-bar">
+      <a href="index.html" class="nav-bar">HOME</a>
+      <a href="feed.html" class="nav-bar">FEED</a>
+      <a href="post.html" class="nav-bar">POST</a>
+    </div>
     <h1 class="title">Idea Feed</h1>
     </div>
     <div class="idea-box">
@@ -15,7 +20,9 @@
     <script>
 //Hello! This is the start of the JavaScript.
 var displayIdea = function(idea) {
+  var ideaElement = $('<h2>' + idea.text + '</h2>');
   $(".idea-box").append(ideaElement);
+
 
 }
 
