@@ -41,7 +41,10 @@ h2 {
   padding: 10px;
   border: 2px solid #FFB03B;
   border-radius: 5px;
-  text-align: center;
+  text-align: left;
+}
+h3 {
+  text-align: left;
 }
 .time {
   color: black;
