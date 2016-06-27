@@ -15,6 +15,7 @@ app.use(bodyParser.json())
 var posts = [];
 var idea = {};
 idea.text = "Two cats who solve crimes in Dunedin";
+idea.time = new Date();
 posts.push(idea);
 
 
@@ -32,6 +33,7 @@ var saveNewIdea = function (request, response) {
   //add this:
   var idea = {};
     idea.text = request.body.idea;
+    idea.time = new Date();
     idea.url = request.body.url;
     idea.author = request.body.author;
     posts.push(idea);
