@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="nav-bar">
+    <a href="index.html" class="nav-bar">HOME</a>
+    <a href="feed.html" class="nav-bar">FEED</a>
+    <a href="post.html" class="nav-bar">POST</a>
+  </div>
   <h1 class="title">Idea Feed</h1>
   <div class="idea-box">
   </div>
@@ -22,11 +27,11 @@
   var createFeed = function(data) {
     data.forEach(displayIdea);
 
-}
-$.get("/ideas", createFeed);
+  }
+  $.get("/ideas", createFeed);
 
 
-//This is the end of the JavaScript.
-</script>
+  //This is the end of the JavaScript.
+  </script>
 </body>
 </html>
