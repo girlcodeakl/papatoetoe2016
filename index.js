@@ -27,11 +27,13 @@ app.get('/ideas', sendIdeasList);
 //let a client POST new ideas
 var saveNewIdea = function (request, response) {
   console.log(request.body.idea); //write it on the command prompt so we can see
+  console.log(request.body.authorInput);
   //delete this: -> posts.push(req.body.idea); //save it in our list
   //add this:
   var idea = {};
     idea.text = request.body.idea;
     idea.url = request.body.url;
+    idea.author = request.body.author;
     posts.push(idea);
     response.send("thanks for your idea. Press back to add another");
 }
