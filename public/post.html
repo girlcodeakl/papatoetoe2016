@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <div class="nav-bar">
-      <a href="index.html" class="nav-bar">HOME</a>
-      <a href="feed.html" class="nav-bar">FEED</a>
-      <a href="post.html" class="nav-bar">POST</a>
-    </div>
-     <div class="idea-submit">
-        <form method="post" action="/ideas">
-          <input type="text" name="idea" value="idea goes here">
-          <input type="submit" value="Submit">
-      </form>
-    </div>
-  </body>
+<head>
+  <script src="jquery.min.js"></script>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="nav-bar">
+    <a href="index.html" class="nav-bar">HOME</a>
+    <a href="feed.html" class="nav-bar">FEED</a>
+    <a href="post.html" class="nav-bar">POST</a>
+  </div>
+
+  <div class="idea-submit">
+    <form class="submitForm" method="post" action="/ideas">
+      <input type="text" name="idea" value="Idea goes here" class="ideaInput">
+      <input type="text" name="url" placeholder="images goes here">
+      <input type="text" name="author" value="Name goes here" class = "authorInput">
+      <input type="submit" placeholder="Submit" >
+    </form>
+  </div>
+  <script>
+  data.author = $(".authorInput").val();
+  </script>
+</body>
+<script>
+
+
+var myCoolFunction = function (e) {
+  e.preventDefault();
+  var data = {};
+  data.idea = $(".ideaInput").val();
+  $.post( "/ideas" , data );
+  $(".note").text("Thanks! Your idea was submitted");
+}
+
+$(".submitForm").on("submit", myCoolFunction);
+
+</script>
+<div class="note"></div>
+
 </html>
