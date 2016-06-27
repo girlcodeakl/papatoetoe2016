@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 <head>
   <meta charset='utf-8'>
   <script src="jquery.min.js"></script>
@@ -23,7 +22,7 @@
   var displayIdea = function(idea) {
     var ideaElement = $('<h2>' + idea.text + ' , ' + idea.author +  " " + "<div class='time'>" + $.format.prettyDate(idea.time) + "</div>" + '</h2>');
     $(".idea-box").append(ideaElement);
-
+}
 
     var createFeed = function(data) {
       data.forEach(displayIdea);
