@@ -16,6 +16,8 @@ var posts = [];
 var idea = {};
 idea.text = "Two cats who solve crimes in Dunedin";
 idea.time = new Date();
+idea.id = 1001;
+idea.author = "Anonymous";
 posts.push(idea);
 
 
@@ -32,6 +34,7 @@ var saveNewIdea = function (request, response) {
   //delete this: -> posts.push(req.body.idea); //save it in our list
   //add this:
   var idea = {};
+    idea.id = Math.round(Math.random() * 10000);
     idea.text = request.body.idea;
     idea.time = new Date();
     idea.url = request.body.url;

@@ -97,3 +97,6 @@ h3 {
 .time {
   color: black;
 }
+.postId {
+    display: none;
+}

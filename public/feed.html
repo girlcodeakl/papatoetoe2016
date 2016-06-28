@@ -20,7 +20,9 @@
   //Hello! This is the start of the JavaScript.
 
   var displayIdea = function(idea) {
-    var ideaElement = $('<h2>' + idea.text + ' , ' + idea.author +  " " + "<div class='time'>" + $.format.prettyDate(idea.time) + "</div>" + '</h2>');
+    var ideaElement = $('<h2>' + idea.text + ' , ' + idea.author +  " "
+    + "<div class='time'>" + $.format.prettyDate(idea.time) + "</div>"
+    +  "<div class='postId'>" + idea.id + "</div>" + '</h2>');
     $(".idea-box").append(ideaElement);
 }
 
