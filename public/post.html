@@ -6,18 +6,37 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <form method="post" action="/ideas">
-    <input type="text" name="idea" value="Idea goes here">
-    <input type="text" name="author" value="Name goes here" class = "authorInput">
-    <input type="submit" value="Submit" >
-    
+  <div class="nav-bar">
+    <a href="index.html" class="nav-bar">HOME</a>
+    <a href="feed.html" class="nav-bar">FEED</a>
+    <a href="post.html" class="nav-bar">POST</a>
+  </div>
 
+  <div class="idea-submit">
+    <form class="submitForm" method="post" action="/ideas">
+      <input type="text" name="idea" placeholder="ENTER IDEA" class="ideaInput">
+      <input type="text" name="url" placeholder="ENTER IMAGE LINK" class= "imageInput">
+      <input type="text" name="author" placeholder="ENTER NAME" class = "authorInput">
+      <input type="submit" placeholder="Submit" >
+    </form>
+  </div>
+</body>
+<script>
 
-  </form>
-  <script>
+var myCoolFunction = function (e) {
+  e.preventDefault();
+  var data = {};
+  data.idea = $(".ideaInput").val();
+  data.image = $(".imageInput").val();
   data.author = $(".authorInput").val();
 
-  </script>
-</body>
+  $.post( "/ideas" , data );
+  $(".note").text("Thanks! Your idea was submitted");
+}
+
+$(".submitForm").on("submit", myCoolFunction);
+
+</script>
+<div class="note"></div>
 
 </html>
