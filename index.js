@@ -34,7 +34,7 @@ var saveNewIdea = function (request, response) {
   var idea = {};
     idea.text = request.body.idea;
     idea.time = new Date();
-    idea.url = request.body.url;
+    idea.image = request.body.image;
     idea.author = request.body.author;
     posts.push(idea);
     response.send("thanks for your idea. Press back to add another");

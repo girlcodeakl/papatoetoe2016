@@ -14,9 +14,9 @@
 
   <div class="idea-submit">
     <form class="submitForm" method="post" action="/ideas">
-      <input type="text" name="idea" placeholder="Idea goes here" class="ideaInput">
-      <input type="text" name="url" placeholder="images goes here">
-      <input type="text" name="author" placeholder="Name goes here" class = "authorInput">
+      <input type="text" name="idea" placeholder="ENTER IDEA" class="ideaInput">
+      <input type="text" name="url" placeholder="ENTER IMAGE LINK" class= "imageInput">
+      <input type="text" name="author" placeholder="ENTER NAME" class = "authorInput">
       <input type="submit" placeholder="Submit" >
     </form>
   </div>
@@ -27,7 +27,9 @@ var myCoolFunction = function (e) {
   e.preventDefault();
   var data = {};
   data.idea = $(".ideaInput").val();
+  data.image = $(".imageInput").val();
   data.author = $(".authorInput").val();
+
   $.post( "/ideas" , data );
   $(".note").text("Thanks! Your idea was submitted");
 }
