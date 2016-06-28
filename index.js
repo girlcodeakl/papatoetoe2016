@@ -26,7 +26,16 @@ var sendIdeasList = function (request, response) {
   response.send(posts);
 }
 app.get('/ideas', sendIdeasList);
-
+app.get('/idea', function (req, res) {
+   var searchId = req.query.id;
+   console.log("Searching for post " + searchId);
+   var results = posts.filter(function (post) { return post.id == searchId; });
+ if (results.length > 0) {
+   res.send(results[0]);
+ } else {
+ res.send(null);
+ }
+});
 //let a client POST new ideas
 var saveNewIdea = function (request, response) {
   console.log(request.body.idea); //write it on the command prompt so we can see
