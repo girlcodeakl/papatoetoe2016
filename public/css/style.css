@@ -101,7 +101,11 @@ h3 {
 .time {
   color: black;
 }
+
+.postId {
+    display: none;
+}
+
 h2:hover {
     background-color:#f2f2f2;
-
 }

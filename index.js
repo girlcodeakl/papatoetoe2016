@@ -17,6 +17,8 @@ var posts = [];
 var idea = {};
 idea.text = "Two cats who solve crimes in Dunedin";
 idea.time = new Date();
+idea.id = 1001;
+idea.author = "Anonymous";
 posts.push(idea);
 
 
@@ -25,7 +27,16 @@ var sendIdeasList = function (request, response) {
   response.send(posts);
 }
 app.get('/ideas', sendIdeasList);
-
+app.get('/idea', function (req, res) {
+   var searchId = req.query.id;
+   console.log("Searching for post " + searchId);
+   var results = posts.filter(function (post) { return post.id == searchId; });
+ if (results.length > 0) {
+   res.send(results[0]);
+ } else {
+ res.send(null);
+ }
+});
 //let a client POST new ideas
 var saveNewIdea = function (request, response) {
   console.log(request.body.idea); //write it on the command prompt so we can see
@@ -34,6 +45,7 @@ var saveNewIdea = function (request, response) {
   //delete this: -> posts.push(req.body.idea); //save it in our list
   //add this:
   var idea = {};
+    idea.id = Math.round(Math.random() * 10000);
     idea.text = request.body.idea;
     idea.time = new Date();
     idea.image = request.body.image;
