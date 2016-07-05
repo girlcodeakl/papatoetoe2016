@@ -18,22 +18,27 @@
   </div>
   <script>
   //Hello! This is the start of the JavaScript.
-
+  
   var displayIdea = function(idea) {
 
     var ideaElement = $('<h2>' + idea.text + '<br>' + idea.author +  " "
     + "<div class='time'>" + $.format.prettyDate(idea.time) + "<img src='" + idea.image + "'>"+ "</div>"
-    +  "<div class='postId'>" + idea.id + "</div>" + '</h2>');
+    +  "<div class='postId'>" + idea.id + "</div>" + '<a href="#" class="likeButton">Like</a>' + '</h2>');
     $(".idea-box").append(ideaElement);
-}
+    ideaElement.delegate(".likeButton", "click", function() {
+      alert("You liked: " + idea.text + "!");
+    });
+  }
 
-    var createFeed = function(data) {
-      data.reverse();
-      data.forEach(displayIdea);
-    }
-    $.get("/ideas", createFeed);
+  var createFeed = function(data) {
+    data.reverse();
+    data.forEach(displayIdea);
+  };
 
-//This is the end of the JavaScript.
-</script>
+
+  $.get("/ideas", createFeed);
+
+  //This is the end of the JavaScript.
+  </script>
 </body>
 </html>
