@@ -32,13 +32,16 @@ body {
   padding: 20px;
 }
 .idea-submit{
-      width: 100%;
+      width: 65%;
       padding: 12px 20px;
       margin: 8px 0;
       display: inline-block;
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
+  }
+  div.center {
+    margin: 0 auto;
   }
 
   input[type=submit] {
