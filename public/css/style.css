@@ -13,8 +13,7 @@
     font-family: "Arial Black", sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 16
-    px;
+    font-size: 16px;
     top: 15px;
     text-decoration: none;
 }
@@ -27,7 +26,7 @@ body {
   color: black;
 }
 .idea-box {
-  background-color: #FFF0A5;
+  background-color: white;
   padding: 20px;
 }
 .idea-submit{
@@ -80,16 +79,21 @@ body {
 
 h1 {
   text-align: center;
-  color: #FFB03B;
+  color:  #1c344a;
+  font-family: "Tangerine", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
 }
 
 h2 {
-  color: #468966;
+  color: black;
   margin: 10px;
   padding: 10px;
-  border: 2px solid #FFB03B;
+  border: 2px solid #008CBA;
   border-radius: 5px;
   text-align: left;
+  font-size: 16px;
 }
 h3 {
   text-align: left;
@@ -97,6 +101,11 @@ h3 {
 .time {
   color: black;
 }
+
 .postId {
     display: none;
+}
+
+h2:hover {
+    background-color:#f2f2f2;
 }
