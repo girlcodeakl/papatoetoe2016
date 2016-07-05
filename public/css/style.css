@@ -2,10 +2,10 @@
     list-style-type: none;
     margin: 0;
     overflow: hidden;
-    background-color: #1c344a;
+    background-color: #B4D8E7;
     float: none;
     display:inline-block;
-    color:White;
+    color:Black;
     text-align: center;
     vertical-align:middle;
     line height:60px;
@@ -13,17 +13,19 @@
     font-family: "Arial Black", sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 30px;
     top: 15px;
     text-decoration: none;
+
 }
 
 .active {
-background-color:#000000;
+background-color:#808080;
 }
 
 body {
   color: black;
+  text-align: center;
 }
 .idea-box {
   background-color: white;
@@ -83,7 +85,7 @@ h1 {
   font-family: "Tangerine", serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 50px;
 }
 
 h2 {
@@ -108,4 +110,8 @@ h3 {
 
 h2:hover {
     background-color:#f2f2f2;
+}
+p {
+  font-size: 35px;
+  border-color: black;
 }
