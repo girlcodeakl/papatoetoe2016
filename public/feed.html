@@ -21,8 +21,8 @@
 
   var displayIdea = function(idea) {
 
-    var ideaElement = $('<h2>' + idea.text + ' , ' + idea.author +  " "
-    + "<div class='time'>" + $.format.prettyDate(idea.time) + "</div>"
+    var ideaElement = $('<h2>' + idea.text + '<br>' + idea.author +  " "
+    + "<div class='time'>" + $.format.prettyDate(idea.time) + "<img src='" + idea.image + "'>"+ "</div>"
     +  "<div class='postId'>" + idea.id + "</div>" + '</h2>');
     $(".idea-box").append(ideaElement);
 }
