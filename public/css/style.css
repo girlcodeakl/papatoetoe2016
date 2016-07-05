@@ -101,7 +101,10 @@ h3 {
 .time {
   color: black;
 }
-
+img {
+  max-width: 50%;
+  max-height: 50%;
+}
 .postId {
     display: none;
 }
