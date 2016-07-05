@@ -48,10 +48,14 @@ var saveNewIdea = function (request, response) {
     idea.id = Math.round(Math.random() * 10000);
     idea.text = request.body.idea;
     idea.time = new Date();
+    if ( request.body.image === "") {
+      idea.image = ("http://28.media.tumblr.com/tumblr_lbtwh922VX1qejf28o1_500.jpg" )
+    } else {
     idea.image = request.body.image;
+  }
     idea.author = request.body.author;
     posts.push(idea);
-    response.send("thanks for your idea. Press back to add another");
+    response.send("Thanks for your idea. Press back to add another");
     var dbPosts = database.collection('posts');
     dbPosts.insert(idea);
 }
