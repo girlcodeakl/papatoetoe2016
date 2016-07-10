@@ -15,10 +15,11 @@ app.use(bodyParser.json())
 //make an empty list of ideas
 var posts = [];
 var idea = {};
-idea.text = "Two cats who solve crimes in Dunedin";
+idea.text = "This is an example of a GREAT idea!";
 idea.time = new Date();
 idea.id = 1001;
 idea.author = "Anonymous";
+idea.image = ("https://i.ytimg.com/vi/OBSx0laWFZk/maxresdefault.jpg" )
 posts.push(idea);
 
 
